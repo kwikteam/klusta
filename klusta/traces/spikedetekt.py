@@ -653,6 +653,8 @@ class SpikeDetekt(object):
             # self._store.delete(name='components', chunk_key=chunk.key)
             # split: {group: {'spike_samples': ..., 'waveforms':, 'masks':}}
             for group, out in split.items():
+                if pcs[group] is None:
+                    continue
                 out['features'] = self.features(out['waveforms'], pcs[group])
                 # Checking that spikes are increasing.
                 spikes = out['spike_samples']
