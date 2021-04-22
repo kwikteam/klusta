@@ -51,6 +51,7 @@ setup(
     package_data={
         'klusta': ['*.txt', '*.prb'],
     },
+    install_requires=['setuptools'],
     entry_points={
         'console_scripts': [
             'klusta = klusta.launch:main'
